@@ -7,7 +7,7 @@ const formatData = (data) => {
   return data.t.map((elem, index) => {
     return {
       x: elem * 1000,
-      y: data.c[index],
+      y: Math.floor(data.c[index]),
     };
   });
 };
@@ -76,7 +76,7 @@ const StockDetailPage = () => {
     <div>
       {chartData && (
         <div>
-          <StockChart />
+          <StockChart chartData={chartData} symbol={symbol} />
         </div>
       )}
     </div>
